@@ -33,7 +33,7 @@ const PokemonLists = ({ pokemons, addPokemons, getPokemons, addPokemon }) => {
     return <>
         <SearchForm search={searchPokemon} onSearchChange={handleSearchChange} placeholderText="Search Pokemons" />
 
-        {pokemons.length === 151 && pokemons.filter((pokemon) =>
+        {pokemons.length === 50 && pokemons.filter((pokemon) =>
             pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
         ).map((pokemon) => (
             <ul key={pokemon.id} className="pokemon-list-item" >
@@ -58,7 +58,7 @@ const PokemonLists = ({ pokemons, addPokemons, getPokemons, addPokemon }) => {
                 </li>
             </ul>
         ))}
-        {pokemons.length < 151 && <Loading text="Loading..." />}
+        {pokemons.length < 50 && <Loading text="Loading..." />}
 
         <Message name={pokemonName} show={show} hideMessage={handleHideMessage} />
     </>

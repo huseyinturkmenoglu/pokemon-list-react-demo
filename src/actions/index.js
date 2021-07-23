@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getPokemons = () => async (dispacth) => {
   let pokemonList = [];
-  for (let i = 1; i <= 151; i++) {
+  for (let i = 1; i <= 50; i++) {
     await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
       .then((response) => {
         pokemonList.push(response.data);
