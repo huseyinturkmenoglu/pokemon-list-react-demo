@@ -1,0 +1,45 @@
+.sticky-header {
+    position: sticky;
+    top: 40px;
+    z-index: 9;
+
+    @media (max-width: 575px) {
+    }
+
+}
+
+.tab-content {
+    >.active.pokemon-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+.pokemon-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px;
+    background-color: #fff;
+    width: 325px;
+    padding: 15px;
+    border-radius: 10px;
+    
+    .pokemon-list-btns {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 15px;
+    }
+}
+
+.stats {
+    text-align: center;
+}
+
+.modal-body {
+    .stats, .types, .ability {
+        text-align: center;
+    }
+}

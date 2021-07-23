@@ -1,0 +1,32 @@
+
+.pokemons-loading {
+    position: relative;
+    font-size: 75px;
+    color: red;
+    -webkit-text-stroke: 0.3vw #252839;
+    text-transform: uppercase;
+}
+
+.pokemons-loading::before {
+    content: attr(data-text);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0%;
+    height: 100%;
+    color: #fff;
+    -webkit-text-stroke: 0vw #fff;
+    overflow: hidden;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+
+    50%,90%
+    {
+        width: 100%
+    }
+}

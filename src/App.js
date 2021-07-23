@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Tabs, Tab, Container } from 'react-bootstrap';
+import './App.scss';
+import PokemonLists from './components/PokemonLists/PokemonLists';
+import UserPokemonList from './components/UserPokemonList/UserPokemonList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+  const [key, setKey] = useState('pokemonList')
+
+  return <Container fluid>
+    <Tabs activeKey={key}
+      onSelect={(k) => setKey(k)}
+      className="mb-3 justify-content-center nav-header">
+      <Tab eventKey="pokemonList" title="Pokemon List" className="pokemon-list">
+        <PokemonLists />
+      </Tab>
+      <Tab eventKey="pokedex" title="Your Pokedex" className="pokemon-list">
+        <UserPokemonList />
+      </Tab>
+    </Tabs>
+  </Container>
 }
 
 export default App;
