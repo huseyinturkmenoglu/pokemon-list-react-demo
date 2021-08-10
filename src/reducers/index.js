@@ -11,7 +11,12 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case "GET_POKEMON_ERROR":
       return { ...state, message: action.payload };
     case "ADDED_POKEMON":
-      return { ...state, addPokemons: [...state.addPokemons, action.payload] };
+      let existed_pokemon = state.addPokemons.find(item => action.payload.id === item.id)
+      if (existed_pokemon) {
+        return { ...state };
+      } else {
+        return { ...state, addPokemons: [...state.addPokemons, action.payload] };
+      }
     case "REMOVED_POKEMON":
       return {
         ...state, addPokemons: [...state.addPokemons.filter(item => item.name !== action.payload.name)]
